@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{marginnote}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+%Document Organisation: 
+\author{Zain Sikand}
+\title{Problem Catalogue}
+\geometry{margin=3cm}
+%Starting Document:  
+\begin{document}
+\begin{raggedright}
+%Formatting: 
+\pagenumbering{arabic}
+\tableofcontents 
+\newpage 
+\maketitle
+
+%Section 1: 
+\section{Integrals: Evil} 
+\subsection{\underline{Problem One}} \par
+
+\textbf{\emph{Problem Author: Zain Sikand}} \\
+\textit{Your final answer should be a single expression in the form $I_1=[h(x)]_{a}^{b}$ where b and a are bounds of $I_1$ to be found} 
+\newline \\
+Conclude whether or not the below integral, $I_1:$
+$$I_{1}= \int_{\int_{x}^{2x}(\ln x)^{2}}^{(3+x)^{6}}(\frac{1}{3e^{x}\cos x \sec^{2} x} + \cot x \csc x) \ dx $$
+can be written as a single expression, with all integration expressions evaluated. 
+\newline \\ 
+{Your conclusion must be supported, \textbf{either}, by an attempt to evaluate the integral or, a proof that  $I_{1}$ has no real anti-derivative.} 
+\newline \\
+\quote|\textit{12 Marks}| \\
+\newpage
+\subsubsection{Worked Solution:}
+$$I_{1} = \int_{\int_{x}^{2x}(lnx)^{2}}^{(3+x)^{6}}(\frac{1}{3e^{x}\cos x \sec^{2} x} + \cot x \csc x) \ dx $$
+$\Rightarrow \ I_{1}=\int_{b}^{a} f(x) dx$ \\
+
+$\therefore \ let \ I_{2}=b$ \\
+$$I_2=\int_{x}^{2x}(\ln|x|)^{2}= \int^{2e^{u}}_{e^{u}}u^{2}e^{u}du=[u^{2}e^{u}]^{2e^{u}}_{e^{u}}-\int^{2e^{u}}_{e^{u}}2ue^{u}e^{u}du$$ \\
+$$= [u^{2}e^{u}]^{2e^{u}}_{e^{u}}- ([2ue^{u}]^{2e^{u}}_{e^{u}}- \int ^{2e^{u}}_{e^{u}}2e^{u}du=[u^{2}e^{u}] ^{2e^{u}}_{e^{u}}-[2ue^{u}-2e^{u}]^{2e^{u}}_{e^{u}}=[u^{2}e^{u}-2ue^{u}-2e^{u}]^{2e^{u}}_{e^{u}}$$ \\
+$$=[x(\ln |x|)^{2}-2x\ln|x|-2x]^{2x}_{x} \because u=\ln|x| \Rightarrow e^{u}=x $$ \\
+$\therefore I_2=x[2(\ln |2x|)^{2}-(\ln |x|)^{2}-\ln |16x^{2}|]$ \marginnote{This result can be obtained by evaluating the bounds} \\
+$$I_1= \int^{(3+x)^{6}}_{I_{2}} (\frac{1}{3e^{x}\cos x \sec^{2} x} + \cot x \csc x) \ dx = \int^b_a(\frac{1}{3e^{x}\cos x \sec^{2} x)} + \int^{b}_{a} \cot x \csc x$$ \\
+$$let \ I_{3}= \int^b_a(\frac{1}{3e^{x}\cos x \sec^{2} x)} = \int^b_a(\frac{1}{3e^{x}\sec x)}dx = \frac{1}{3} \int^b_a(e^{-x}\cos x)dx$$ \\
+$$I_{3}=1/3(J) $$ \\
+$$J=[-e^{-x}\cos x]^b_a - \int^b_a -e^{-x}\sin x = [-e^{-x}\cos x]^b_a-([-e^{-x}\sin x]^b_a-\int^b_ae^{-x}cosx$$ \\
+$$J=[-e^{-x}\cos x]^b_a-[e^{-x}\sin x]^b_a-J $$ \\
+$$\therefore \ J=\frac{1}{2}[e^{-x}\sin x-e^{-x}\cos x]^b_a$$ \\
+$$\therefore \ I_{3}=\frac{1}{6}[e^{-x}\sin x-e^{-x}\cos x]^b_a$$ \\
+$$I_{1}=I_{3}+\int^b_a\cot x \csc x \ dx$$ \\
+$$ let \ I_{4}= \int^b_a\cot x \csc x \ dx$$ \\
+$$I_{4}= \int^b_a (\frac{1}{\sin x})(\frac{\cos x}{\sin x}) \ dx = \int^b_a \frac{\cos x}{1-\cos^{2} x} \ dx $$ \\
+\textbf{Integrate $I_4$ by parts:}
+$$ I_{4}=\int^b_a \frac{\cos x}{\sin^{2} x} \ dx = \int^b_a \cos x ( \frac{1}{\sin^{2} x}) \ dx = [\frac{1}{\sin x}]^b_a-\int^b_a \sin x ( \frac{-2\sin x\cos x}{\sin^{4} x}) \ dx = [\frac{1}{\sin x}]^b_a-\int^b_a \frac{-2 \cos x}{\sin x} \ dx $$ \\
+$$ \therefore I_{4}= [\frac{1}{\sin x}]^b_a+ 2I_{4}$$ \\
+$$\Rightarrow I_{4}=-\frac{1}{\sin x} $$
+$$ \therefore I_{1}= [I_{3}+I_{4}]^b_a $$
+\footnote{ \textbf{ Warning:} Solution is unverified} 
+$\therefore$ The integral $I_{1}$ can be written as a single expression within its bounds 
+$\therefore$ Q.E.D
+
+\subsection{\underline{Problem 2}}
+
+\end{raggedright} 
+\end{document}

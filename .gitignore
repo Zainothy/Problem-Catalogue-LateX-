@@ -1,6 +1,10 @@
+# Ignore LaTeX build files
 *.log
 *.aux
 *.toc
 *.synctex.gz
-document.pdf 
-ignore/ 
+*.tex.metadata
+
+# Ignore backup directories
+ignore/
+ignore/**/*.tex_backups_/
