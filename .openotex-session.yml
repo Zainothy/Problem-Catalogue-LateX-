@@ -1,8 +1,32 @@
 version: 1
 tabs:
   - C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.tex
-active: C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.tex
+  - C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.log
+  - C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.pdf
+  - C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.aux
+  - C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\README.md
+  - C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.toc
+  - C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.synctex.gz
+active: C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.log
 cursors:
   - path: C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.tex
+    line: 1
+    column: 1
+  - path: C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.log
+    line: 1
+    column: 1
+  - path: C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.pdf
+    line: 1
+    column: 1
+  - path: C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.aux
+    line: 1
+    column: 1
+  - path: C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\README.md
+    line: 1
+    column: 1
+  - path: C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.toc
+    line: 1
+    column: 1
+  - path: C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\document.synctex.gz
     line: 1
     column: 1
