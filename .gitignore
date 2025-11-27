@@ -1,6 +1,6 @@
-$GIT_DIR/document.log
-$GIT_DIR/document.pdf
-$GIT_DIR/document.synctex.gz
-$GIT_DIR/document.aux 
-$GIT_DIR/document.toc 
-C:\Users\mayas\GitHub\Problem-Catalogue-LateX-\ignore
+*.log
+*.aux
+*.toc
+*.synctex.gz
+document.pdf 
+ignore/ 
