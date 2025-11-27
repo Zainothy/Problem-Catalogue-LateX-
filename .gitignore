@@ -4,7 +4,8 @@
 *.toc
 *.synctex.gz
 *.tex.metadata
-
+*.yml
+document.pdf
 # Ignore backup directories
 ignore/
 ignore/**/*.tex_backups_/
