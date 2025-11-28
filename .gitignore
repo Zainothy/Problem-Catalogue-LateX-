@@ -5,6 +5,8 @@
 *.synctex.gz
 *.tex.metadata
 *.yml
+*.fls 
+*.fdb_latexmk 
 document.pdf
 # Ignore backup directories
 ignore/
