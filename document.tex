@@ -1,4 +1,4 @@
-\documentclass{book}
+\documentclass[openany]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \usepackage{amssymb}
@@ -6,6 +6,8 @@
 \usepackage{marginnote}
 \usepackage{amsmath}
 \usepackage{parskip}
+\usepackage{tikz} 
+\usetikzlibrary{calc,arrows.meta,decorations.pathreplacing}
 
 %Document Organisation: 
 \author{Zain Sikand}
@@ -19,11 +21,10 @@
     \pagenumbering{arabic}
     \maketitle
     \tableofcontents
-
     %Section 1: 
     \chapter{Mathematics}
     \newpage
-    \section{Integrals: Evil}
+    \section{Integrals:}
     \subsection{\underline{Problem One}} \par
 
     \textbf{\emph{Problem Author: Zain Sikand}} \\
@@ -35,7 +36,7 @@
     \newline \\
     {Your conclusion must be supported, \textbf{either}, by an attempt to evaluate the integral or, a proof that  $I_{1}$ has no real anti-derivative.}
     \newline \\
-    \quote|\textit{12 Marks}| \\
+    \textit{[6 Marks]}| \\
     \newpage
     \subsubsection{Worked Solution:}
     $$I_{1} = \int_{\int_{x}^{2x}(lnx)^{2}}^{(3+x)^{6}}(\frac{1}{3e^{x}\cos x \sec^{2} x} + \cot x \csc x) \ dx $$
@@ -71,15 +72,89 @@
     \subsection{\underline{Problem One:}}
     \textbf{IMO 2011}
 
-    Let $S$ be a finite set of at least two points in the plane. Assume that no
-    three points of $S$ are collinear. A windmill is a process that starts with a
-    line $\ell$ going through a single point $P \in S$. The line rotates clockwise about
-    the pivot $P$ until the first time that the line meets some other point belonging
-    to S. This point, $Q$, takes over as the new pivot, and the line now rotates
-    clockwise about $Q$, until it next meets a point of $S$. This process continues
-    indefinitely. Show that we can choose a point $P$ in $S$ and a line $\ell$ going through
-    $P$ such that the resulting windmill uses each point of $S$ as a pivot infinitely
-    many times.
+Let $S$ be a finite set of at least two points in the plane. Assume that no three points of $S$ are collinear. A windmill is a process that starts with a line $\ell$ going through a single point $P \in S$. The line rotates clockwise aboutthe pivot $P$ until the first time that the line meets some other point belonging to S. This point, $Q$, takes over as the new pivot, and the line now rotates clockwise about $Q$, until it next meets a point of $S$. This process continues indefinitely. Show that we can choose a point $P$ in $S$ and a line $\ell$ going through $P$ such that the resulting windmill uses each point of $S$ as a pivot infinitely many times.
 
+\textit{[12 Marks]} \\
+
+\subsection {\underline{Problem Two:}}
+\textbf{\emph{Problem Author: Zain Sikand}}
+\newline \\  
+
+Imagine Let \(T_{1}\) be a tetrahedron and let \(S_{1}\) be its circumsphere with radius \(R\).  
+For each radius of \(S_{1}\), extend it to a full line and denote this line by \(\ell\).
+
+In the plane \(z = 0\), consider a circle \(C_{1}\) which circumscribes an equilateral triangle whose sides are tangent to the coordinate axes \(x = 0\) and \(y = 0\).  Thus the triangle has one vertex at the origin and its other two vertices lie on the positive coordinate axes.
+
+Suppose that for certain choices of the radius of \(S_{1}\), the corresponding line \(\ell\) intersects the plane \(z = 0\) and is tangent to the circle \(C_{1}\).  The set of all such tangent lines \(\ell\) is finite.
+
+Determine, in terms of \(R\), the area of the circle \(C_{1}\).
+
+\subsection{\underline{Problem Three:}}
+\textbf{\emph{Problem Author: Carter Owen}} 
+\newline \\ 
+Diagram 1 shows a right-angled triangle $\triangle ABC$ of height $H$, divided vertically by a straight line $\ell$ such that it meets the triangle at a point defined by the variable $\phi$. The division of $\triangle ABC$ splits it at $\phi$ into a trapezium $CD{\phi}A$ and a new right angled triangle $\triangle DB{\phi}$. Deduce the value(s) for $\phi$ that divides $\triangle ABC$ such that the area of $CD{\phi}A$ is equal to that of $DB{\phi}$. 
+\begin{center}
+
+\begin{tikzpicture}[scale=1, font=\small]
+
+  % Internal geometry (not printed)
+  \def\b{7.2}        % base length (internal)
+  \def\H{4.2}        % height (internal)
+  \def\phival{2.6}   % internal numeric x-position of dividing line
+
+  % Main triangle vertices
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (\b,0);
+  \coordinate (C) at (0,\H);
+
+  % Intersection of the vertical line with the hypotenuse = D
+  \coordinate (D) at (\phival, { \H*(1 - \phival/\b)});
+  % Intersection with the base (labelled phi)
+  \coordinate (P) at (\phival,0);
+
+  % a little extra height for the dotted extension above the triangle
+  \coordinate (Top) at (\phival, { \H + 0.9 });
+
+  % Draw the triangle outlines
+  \draw[line width=0.9pt] (A) -- (B) -- (C) -- cycle;
+
+  % small right-angle box at A
+  \draw[line width=0.8pt] ($(A)+(0.18,0)$) -- ++(0,0.18) -- ++(-0.18,0);
+
+  % Solid segment INSIDE the triangle: from D down to base point P
+  \draw[line width=0.9pt] (D) -- (P);
+
+  % Dotted extension ABOVE the triangle: from Top down to D (dotted)
+  % label \ell near the dotted part above D
+  \draw[dotted, line width=0.9pt] (Top) -- (D) node[pos=0.14, right=2pt, yshift=4pt] {$\ell$};
+
+  % re-draw region boundaries to ensure consistent stroke weights
+  \draw[line width=0.7pt] (A) -- (P); % left base segment
+  \draw[line width=0.7pt] (P) -- (B); % right base segment
+  \draw[line width=0.7pt] (A) -- (C); % left vertical
+  \draw[line width=0.7pt] (C) -- (D); % left part of hypotenuse
+  \draw[line width=0.7pt] (D) -- (B); % right part of hypotenuse
+
+  % Labels: A, B, C
+  \node[below left]  at (A) {$A$};
+  \node[below right] at (B) {$B$};
+  \node[above] at (C) {$C$};
+
+  % Label D at intersection (slightly above-left to avoid overlap)
+  \node[above left, yshift=1pt] at (D) {$D$};
+
+  % Label the base intersection as phi (symbol only)
+  \node[below] at (P) {$\phi$};
+
+\end{tikzpicture}
+
+\end{center}
+\textit{[4 Marks]} \\
+
+\section{\underline{Problem Four:}}
+\textbf{\emph{Moscow State University, 1989}} \\
+In a Trapezium KLMN, sides $KN$ and $LM$ are paralell, with $KN=3$ and $M= \angle 120 $. $LM$ and $MN$ are tangent to the circle circumscribed about $\triangle KLN$. Find the area of $\triangle KLN$. 
+
+\textit{[6 Marks]} \\
 \end{raggedright}
 \end{document}
