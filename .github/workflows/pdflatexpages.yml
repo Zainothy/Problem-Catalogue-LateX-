@@ -50,7 +50,7 @@ jobs:
         with:
           root_file: document.tex
           compiler: latexmk
-          args: -pdf -interaction=nonstopmode -halt-on-error
+          args: -pdf -interaction=nonstopmode -halt-on-error -pdflatex="pdflatex -synctex=1 -interaction=nonstopmode"
           latexmk_use_lualatex: false
           latexmk_use_xelatex: false
 
