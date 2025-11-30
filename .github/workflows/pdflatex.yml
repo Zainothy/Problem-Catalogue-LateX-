@@ -1,0 +1,26 @@
+name: Build PDF
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: LaTeX compilation
+      uses: dante-ev/latex-action@2021-A
+      with:
+        root_file: document.tex
+        compiler: pdflatex
+        args: -interaction=nonstopmode
+
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: main.pdf 
+        path: document.pdf
