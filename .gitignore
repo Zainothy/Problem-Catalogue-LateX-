@@ -7,7 +7,6 @@
 *.yml
 *.fls 
 *.fdb_latexmk 
-*.out
 document.pdf
 # Ignore backup directories
 ignore/

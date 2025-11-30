@@ -64,9 +64,11 @@ jobs:
             cp build/document.pdf public/document.pdf
           fi
           cp index.html public/index.html
+          # Create .nojekyll to ensure GitHub Pages serves index.html
+          touch public/.nojekyll
           
-      - name: Verify PDF exists
-        run: ls -lh public/document.pdf
+      - name: Verify files exist
+        run: ls -lh public/
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
