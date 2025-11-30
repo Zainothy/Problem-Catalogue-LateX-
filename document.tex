@@ -1,14 +1,16 @@
-\documentclass[openany,oneside,12pt]{book}
+\documentclass[openany,oneside,12pt,hidelinks]{book}
+\usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
 \usepackage{marginnote}
 \usepackage{parskip}
-\usepackage{tikz} 
+  \usepackage{tikz} 
+  \usetikzlibrary{calc,arrows.meta,decorations.pathreplacing}
+\usepackage{setspace}
 \usepackage{csquotes}
-\usetikzlibrary{calc,arrows.meta,decorations.pathreplacing}
-
+\usepackage{caption}
 %Document Organisation: 
 \author{Zain Sikand}
 \title{Problem Catalogue}
@@ -30,8 +32,8 @@
     \textit{\emph{Definition:} Mathematics,} \textbf{The foundational means to which we, as a lost species amongst the cosmos, attempt to rationalise our existence, attempt to control reality, and attempt to legitimise our purpose as a species.}
 
     \newpage
-    \section{Integrals:}
-    \subsection{\underline{Problem One}} \par
+    \section{Integrals}
+    \subsection{\underline{Problem One:}} \par
 
     \textbf{\emph{Problem Author: Zain Sikand}} \\
     \textit{Your final answer should be a single expression in the form $I_1=[h(x)]_{a}^{b}$ where b and a are bounds of $I_1$ to be found}
@@ -98,9 +100,8 @@ Determine, in terms of \(R\), the area of the circle \(C_{1}\).
 \subsection{\underline{Problem Three:}}
 \textbf{\emph{Problem Author: Carter Owen}} 
 \newline \\ 
-Diagram 1 shows a right-angled triangle $\triangle ABC$ of height $H$, divided vertically by a straight line $\ell$ such that it meets the triangle at a point defined by the variable $\phi$. The division of $\triangle ABC$ splits it at $\phi$ into a trapezium $CD{\phi}A$ and a new right angled triangle $\triangle DB{\phi}$. Deduce the value(s) for $\phi$ that divides $\triangle ABC$ such that the area of $CD{\phi}A$ is equal to that of $DB{\phi}$. 
+Figure 1.1 shows a right-angled triangle $\triangle ABC$ of height $H$, divided vertically by a straight line $\ell$ such that it meets the triangle at a point defined by the variable $\phi$. The division of $\triangle ABC$ splits it at $\phi$ into a trapezium $CD{\phi}A$ and a new right angled triangle $\triangle DB{\phi}$. Deduce the value(s) for $\phi$ that divides $\triangle ABC$ such that the area of $CD{\phi}A$ is equal to that of $DB{\phi}$. 
 \begin{center}
-
 \begin{tikzpicture}[scale=1, font=\small]
 
   % Internal geometry (not printed)
@@ -154,6 +155,7 @@ Diagram 1 shows a right-angled triangle $\triangle ABC$ of height $H$, divided v
 
 \end{tikzpicture}
 \end{center}
+\captionof{figure}{}
 \subsection{\underline{Problem Four:}}
 \textbf{\emph{Moscow State University, 1989}} \\
 In a Trapezium KLMN, sides $KN$ and $LM$ are paralell, with $KN=3$ and $M= \angle 120^{\circ} $. $LM$ and $MN$ are tangent to the circle circumscribed about $\triangle KLN$. Find the area of $\triangle KLN$. \\
@@ -169,10 +171,16 @@ that for each $x \in \mathbb{R^{+}}$, there is exactly one $y \in \mathbb{R^{+}}
 \chapter{Physics}
 \textit{\emph{Definition:} Physics,} \textbf{The study of all things that exist to place one under  mental, spiritual, and physical duress}
 \newpage
-\section{Kinematics and Further Mechanics:}
-\subsection{\underline{Problem One}}
+\section{Kinematics and Further Mechanics}
+\subsection{\underline{Problem One:}}
 \textbf{\emph{Problem Author: Zain Sikand}} 
 \newline \\
 A person moving at speed $S$ whistles, stopping once after 5 seconds of walking. $t=15s$ later, he continues walking along his current trajectory before passing a stationary group of people. The group of people begin to hear the whistling at $t=30s$ before he passes them. Determine the speed at which the man is walking, assuming the \textbf{speed of sound= $330ms^{-1}$}
+
+\subsection{\underline{Problem Two:}}
+\textbf{\emph{Problem Author: Zain Sikand}}
+
+
+
 \end{raggedright}
 \end{document}
