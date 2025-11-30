@@ -49,17 +49,10 @@ jobs:
         uses: dante-ev/latex-action@2021-A
         with:
           root_file: document.tex
-          compiler: pdflatex
-          args: -interaction=nonstopmode -halt-on-error
+          compiler: latexmk
+          args: -pdf -interaction=nonstopmode -halt-on-error
           latexmk_use_lualatex: false
           latexmk_use_xelatex: false
-          # Run multiple times to ensure TOC generation
-          pre_compile: |
-            # Clean auxiliary files that might cause issues
-            rm -f *.aux *.toc *.out *.log 2>/dev/null || true
-          post_compile: |
-            # Run pdflatex again to ensure TOC is generated
-            pdflatex -interaction=nonstopmode -halt-on-error document.tex
 
       - name: Prepare pages folder
         run: |
