@@ -1,12 +1,12 @@
-\documentclass[openany]{book}
+\documentclass[openany,oneside,12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
-\usepackage{amssymb}
+\usepackage{amsmath, amssymb}
 \usepackage{graphicx}
 \usepackage{marginnote}
-\usepackage{amsmath}
 \usepackage{parskip}
 \usepackage{tikz} 
+\usepackage{csquotes}
 \usetikzlibrary{calc,arrows.meta,decorations.pathreplacing}
 
 %Document Organisation: 
@@ -21,8 +21,14 @@
     \pagenumbering{arabic}
     \maketitle
     \tableofcontents
+    \newpage
+    %Introduction: 
+    \section{Introduction:}
+    A collection of hellish maths and physics problems spawned from the depth of an erratic students hyperfixations, lacking logic or boundaries. This catalogue pushes the will of an A-Level student, and breaks down their understanding of maths and physics fundamentally. No form of revision or study at their age aids in the misery bestowed upon them via these problems, no trick or shortcut penetrates the difficulty of these problems. These problems, fundamentally, lack any consideration for the subject of their solving, lack consideration for creating a 'doable' problem, and lack any consideration for your sanity. 
     %Section 1: 
     \chapter{Mathematics}
+    \textit{\emph{Definition:} Mathematics,} \textbf{The foundational means to which we, as a lost species amongst the cosmos, attempt to rationalise our existence, attempt to control reality, and attempt to legitimise our purpose as a species.}
+
     \newpage
     \section{Integrals:}
     \subsection{\underline{Problem One}} \par
@@ -36,7 +42,7 @@
     \newline \\
     {Your conclusion must be supported, \textbf{either}, by an attempt to evaluate the integral or, a proof that  $I_{1}$ has no real anti-derivative.}
     \newline \\
-    \textit{[6 Marks]}| \\
+    \textit{[6 Marks]} \\
     \newpage
     \subsubsection{Worked Solution:}
     $$I_{1} = \int_{\int_{x}^{2x}(lnx)^{2}}^{(3+x)^{6}}(\frac{1}{3e^{x}\cos x \sec^{2} x} + \cot x \csc x) \ dx $$
@@ -147,14 +153,26 @@ Diagram 1 shows a right-angled triangle $\triangle ABC$ of height $H$, divided v
   \node[below] at (P) {$\phi$};
 
 \end{tikzpicture}
-
 \end{center}
-\textit{[4 Marks]} \\
-
-\section{\underline{Problem Four:}}
+\subsection{\underline{Problem Four:}}
 \textbf{\emph{Moscow State University, 1989}} \\
-In a Trapezium KLMN, sides $KN$ and $LM$ are paralell, with $KN=3$ and $M= \angle 120 $. $LM$ and $MN$ are tangent to the circle circumscribed about $\triangle KLN$. Find the area of $\triangle KLN$. 
+In a Trapezium KLMN, sides $KN$ and $LM$ are paralell, with $KN=3$ and $M= \angle 120^{\circ} $. $LM$ and $MN$ are tangent to the circle circumscribed about $\triangle KLN$. Find the area of $\triangle KLN$. \\
+\textit{[6 Marks]} 
+\newpage
+\section{Real Analysis}
+\subsection{\underline{Problem One:}} 
+\textbf{\emph{IMO 2022}}
+\newline \\ 
+Let $\mathbb{R^{+}}$ denote the set of positive real numbers. Find all functions $f : \mathbb{R}^{+} \rightarrow \mathbb{R}^{+}$ such
+that for each $x \in \mathbb{R^{+}}$, there is exactly one $y \in \mathbb{R^{+}}$ satisfying $$ xf(y)+yf(x) \leq 2$$
 
-\textit{[6 Marks]} \\
+\chapter{Physics}
+\textit{\emph{Definition:} Physics,} \textbf{The study of all things that exist to place one under  mental, spiritual, and physical duress}
+\newpage
+\section{Kinematics and Further Mechanics:}
+\subsection{\underline{Problem One}}
+\textbf{\emph{Problem Author: Zain Sikand}} 
+\newline \\
+A person moving at speed $S$ whistles, stopping once after 5 seconds of walking. $t=15s$ later, he continues walking along his current trajectory before passing a stationary group of people. The group of people begin to hear the whistling at $t=30s$ before he passes them. Determine the speed at which the man is walking, assuming the \textbf{speed of sound= $330ms^{-1}$}
 \end{raggedright}
 \end{document}
