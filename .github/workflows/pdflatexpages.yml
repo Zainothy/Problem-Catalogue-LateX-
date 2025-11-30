@@ -11,28 +11,61 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
-      - name: Skip compile if document.tex unchanged and PDF exists
+      - name: Check if compile needed
         id: skipcheck
         run: |
-          if [ -f public/document.pdf ] && git diff --quiet HEAD^ HEAD -- document.tex; then
+          # Check if document.tex changed in the last commit
+          if git diff --quiet HEAD^ HEAD -- document.tex 2>/dev/null; then
+            TEX_CHANGED=false
+          else
+            TEX_CHANGED=true
+          fi
+          
+          # Check if PDF exists in repository
+          if [ -f document.pdf ]; then
+            PDF_EXISTS=true
+          else
+            PDF_EXISTS=false
+          fi
+          
+          # Skip if tex unchanged AND pdf exists
+          if [ "$TEX_CHANGED" = false ] && [ "$PDF_EXISTS" = true ]; then
             echo "skip_build=true" >> $GITHUB_OUTPUT
+            echo "Skipping compilation: no changes to document.tex and PDF exists"
           else
             echo "skip_build=false" >> $GITHUB_OUTPUT
+            if [ "$TEX_CHANGED" = true ]; then
+              echo "Compiling: document.tex has changed"
+            else
+              echo "Compiling: PDF does not exist"
+            fi
           fi
 
-      - name: Compile LaTeX
-        if: steps.skipcheck.outputs.skip_build == 'false'   # FIXED INDENT
-        uses: dante-ev/latex-action@2021-A                  # FIXED INDENT
-        with:                                               # FIXED INDENT
+      - name: Compile LaTeX (multiple passes for TOC)
+        if: steps.skipcheck.outputs.skip_build == 'false'
+        uses: dante-ev/latex-action@2021-A
+        with:
           root_file: document.tex
-          compiler: pdflatex                               # FIXED INDENT
-          args: -interaction=nonstopmode -quiet
+          compiler: pdflatex
+          args: -interaction=nonstopmode -halt-on-error
+          latexmk_use_lualatex: false
+          latexmk_use_xelatex: false
+          # Run multiple times to ensure TOC generation
+          pre_compile: |
+            # Clean auxiliary files that might cause issues
+            rm -f *.aux *.toc *.out *.log 2>/dev/null || true
+          post_compile: |
+            # Run pdflatex again to ensure TOC is generated
+            pdflatex -interaction=nonstopmode -halt-on-error document.tex
 
-      - name: Move PDF to pages folder
-        run: |                                              # FIXED INDENT (needed "|" for multiline)
-          mkdir public
+      - name: Prepare pages folder
+        run: |
+          mkdir -p public
           cp document.pdf public/document.pdf
+          cp index.html public/index.html
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
@@ -42,6 +75,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    if: always()
 
     permissions:
       pages: write
