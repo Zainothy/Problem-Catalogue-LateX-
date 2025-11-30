@@ -10,24 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Compile LaTeX
-      uses: dante-ev/latex-action@2021-A
-      with:
-        root_file: document.tex         # CHANGE IF YOUR MAIN TEX FILE HAS A DIFFERENT NAME
-        compiler: pdflatex
-        args: -interaction=nonstopmode
-        cache: true                     
-    - name: Prepare PDF for GitHub Pages
-      run: |
-        mkdir public
-        cp document.pdf public/         # This produces a real PDF, not a .zip
+      - name: Compile LaTeX
+        uses: dante-ev/latex-action@2021-A
+        with:
+          root_file: document.tex     
+          compiler: pdflatex
+          args: -interaction=nonstopmode
+          cache: true
 
-    - name: Upload GitHub Pages artifact
-      uses: actions/upload-pages-artifact@v2
-      with:
-        path: public
+      - name: Prepare PDF for GitHub Pages
+        run: |
+          mkdir public
+          cp document.pdf public/
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: public
 
   deploy:
     needs: build
