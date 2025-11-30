@@ -20,10 +20,11 @@ jobs:
           args: -interaction=nonstopmode
           cache: true
 
-      - name: Prepare PDF for GitHub Pages
-        run: |
+      - name: Move PDF to pages folder
+        run: 
           mkdir public
-          cp document.pdf public/
+          cp document.pdf public/document.pdf
+
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
