@@ -18,8 +18,7 @@ jobs:
         root_file: document.tex         # CHANGE IF YOUR MAIN TEX FILE HAS A DIFFERENT NAME
         compiler: pdflatex
         args: -interaction=nonstopmode
-        cache: true                     # 🚀 HUGE SPEED BOOST
-
+        cache: true                     
     - name: Prepare PDF for GitHub Pages
       run: |
         mkdir public
