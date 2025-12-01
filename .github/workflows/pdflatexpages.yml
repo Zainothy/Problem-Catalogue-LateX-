@@ -49,10 +49,16 @@ jobs:
         uses: dante-ev/latex-action@2021-A
         with:
           root_file: document.tex
-          compiler: latexmk
-          args: -pdf -interaction=nonstopmode -halt-on-error -pdflatex="pdflatex -synctex=1 -interaction=nonstopmode"
-          latexmk_use_lualatex: false
-          latexmk_use_xelatex: false
+          compiler: pdflatex
+          args: -interaction=nonstopmode -halt-on-error
+      
+      - name: Compile LaTeX again for TOC
+        if: steps.skipcheck.outputs.skip_build == 'false'
+        uses: dante-ev/latex-action@2021-A
+        with:
+          root_file: document.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -halt-on-error
 
       - name: Prepare pages folder
         run: |
