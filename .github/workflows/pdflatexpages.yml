@@ -70,6 +70,10 @@ jobs:
             cp build/document.pdf public/document.pdf
           fi
           cp index.html public/index.html
+          # Copy Images folder if it exists
+          if [ -d Images ]; then
+            cp -r Images public/
+          fi
           # Create .nojekyll to ensure GitHub Pages serves index.html
           touch public/.nojekyll
           
