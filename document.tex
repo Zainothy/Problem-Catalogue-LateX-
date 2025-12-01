@@ -75,7 +75,54 @@
     \footnote{ \textbf{ Warning:} Solution is unverified}
     $\therefore$ The integral $I_{1}$ can be written as a single expression within its bounds
     $\therefore$ Q.E.D
+\subsection{\underline{Problem Two:}}
+\textbf{\emph{ Modified Daily Integral: Evil}} 
+\newline \\
 
+
+A tank is formed by rotating the line segment joining $(y,\rho)=(0,1)$ and $(6,2)$
+in the $(y,\rho)$ plane (height $y$, radius $\rho$) about the $y$–axis.  
+The tank has height $6\,\mathrm{m}$ and is completely full at time $t=0$.  
+There is no inflow, and water drains through a valve at the bottom.
+
+Let $h$ denote the depth of water measured upward from the bottom
+($0 \le h \le 6$), and let $r$ be the radius of the water surface when the depth is $h$.
+Let $V(h,r)$ denote the volume of water at that moment.
+
+Conservation of volume gives
+\[
+\frac{dV}{dt}=-Q_{\mathrm{out}}(h),
+\]
+where $Q_{\mathrm{out}}(h)$ is the volumetric outflow rate in $\mathrm{m}^3/\mathrm{min}$.
+
+The valve operates in two phases.  
+In each phase the outflow is constant, and its value is given by a definite integral:
+
+\medskip
+
+\textbf{Phase I} (for $6 \ge h \ge 3$):
+\[
+Q_{\mathrm{out}}(h)=K_{1}, \qquad
+K_{1}=c_{1}\int_{-\infty}^{\infty}
+\frac{|\ln|x||}{(x^{2}+1)(x-1)}\,dx,
+\qquad
+c_{1}=0.12\ \text{(m}^3/\text{min per unit integral)}.
+\]
+
+\medskip
+
+\textbf{Phase II} (for $3>h\ge 0$):
+\[
+Q_{\mathrm{out}}(h)=K_{2}, \qquad
+K_{2}=c_{2}\int_{0}^{\pi/2} x^{3}\tan x\,dx,
+\qquad
+c_{2}=0.15\ \text{(m}^3/\text{min per unit integral)}.
+\]
+
+\medskip
+
+Determine the sum of the magnitudes of the rates at which the water height
+is decreasing when $h=4.25$ and when $h=1$.
     \newpage
     \section{Euclidian Geometry}
     \subsection{\underline{Problem One:}}
@@ -198,7 +245,8 @@ The spectrum shows four bright hydrogen lines, which are part of the Balmer seri
 which are normally seen in the visible). The rest frame wavelengths of the longest four lines in
 the series are 410 nm, 434 nm, 486 nm and 656 nm \textbf{(not all of which are visible in the spectrum)}. \\
 Once a redshift is known, its recessional velocity can be calculated. At very high redshifts, such
-as these, General Relativity must be used. A conversion from redshift to recessional velocity is
+as these, General Relativity must be used.\\
+A conversion from redshift to recessional velocity is
 shown in Figure 3. 
 \newline \\ 
 
