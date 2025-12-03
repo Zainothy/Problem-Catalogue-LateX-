@@ -74,6 +74,10 @@ jobs:
           if [ -d Images ]; then
             cp -r Images public/
           fi
+          # Copy .htaccess for PDF inline display
+          if [ -f .htaccess ]; then
+            cp .htaccess public/.htaccess
+          fi
           # Create .nojekyll to ensure GitHub Pages serves index.html
           touch public/.nojekyll
           
