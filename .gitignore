@@ -1,4 +1,8 @@
 # Ignore LaTeX build files
+*.bbl
+*.blg
+*.bcf
+*.blg
 *.log
 *.aux
 *.toc
