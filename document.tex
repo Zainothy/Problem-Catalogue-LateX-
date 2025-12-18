@@ -1,3 +1,4 @@
+
 \documentclass[openany,oneside,12pt,hidelinks]{book}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
@@ -7,11 +8,16 @@
 	\graphicspath{{./Images}}
 \usepackage{marginnote}
 \usepackage{parskip}
-  \usepackage{tikz} 
- \usetikzlibrary{calc,arrows.meta,decorations.pathreplacing}
+\usepackage{tikz} 
+\usetikzlibrary{calc,arrows.meta,decorations.pathreplacing}
 \usepackage{setspace}
 \usepackage{csquotes}
 \usepackage{caption}
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt]{biblatex}
+\addbibresource{references.bib} 
 %Document Organisation: 
 \author{Zain Sikand}
 \title{Problem Catalogue}
@@ -128,6 +134,10 @@ is decreasing when $h=4.25$ and when $h=1$.\\
 \newline \\ 
 Evaluate the following integral $I$, using a related integral if necessary 
 $$\int^{\infty}_{1} \frac{\ln(\ln|x|)}{1+x^{2}}dx$$
+
+Information regarding solving the integral, methods used in doing so, and the solution itself
+can be found in \cite{abdulsalam2022new}
+\\
     \newpage
     \section{Euclidian Geometry}
     \subsection{\underline{Problem One:}}
@@ -265,5 +275,6 @@ wavelength corresponds to which line.]}
 b) Taking the value of the Hubble constant to be $H_{0} = 70kms^{-1}Mpc^{-1}$, what is the distance
 to the galaxy? Give your answer in Mpc. \\ 
 
+\printbibliography
 \end{raggedright}
 \end{document}
