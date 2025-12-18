@@ -44,15 +44,31 @@ jobs:
             fi
           fi
 
-      - name: Compile LaTeX (multiple passes for TOC)
+      - name: Compile LaTeX (first pass)
         if: steps.skipcheck.outputs.skip_build == 'false'
         uses: dante-ev/latex-action@2021-A
         with:
           root_file: document.tex
           compiler: pdflatex
           args: -interaction=nonstopmode -halt-on-error
+
+      - name: Run Biber for bibliography
+        if: steps.skipcheck.outputs.skip_build == 'false'
+        uses: dante-ev/latex-action@2021-A
+        with:
+          root_file: document.tex
+          compiler: biber
+          args: document
       
-      - name: Compile LaTeX again for TOC
+      - name: Compile LaTeX (second pass for bibliography)
+        if: steps.skipcheck.outputs.skip_build == 'false'
+        uses: dante-ev/latex-action@2021-A
+        with:
+          root_file: document.tex
+          compiler: pdflatex
+          args: -interaction=nonstopmode -halt-on-error
+
+      - name: Compile LaTeX (final pass for references)
         if: steps.skipcheck.outputs.skip_build == 'false'
         uses: dante-ev/latex-action@2021-A
         with:
