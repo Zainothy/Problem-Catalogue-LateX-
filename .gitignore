@@ -16,7 +16,7 @@ document.pdf
 # Ignore backup directories
 ignore/
 ignore/**/*.tex_backups_/
-
+*.synctex
 *.dvi
 
 *.out
