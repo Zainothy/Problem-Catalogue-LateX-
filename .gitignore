@@ -11,7 +11,14 @@
 *.yml
 *.fls 
 *.fdb_latexmk 
+document.out 
 document.pdf
 # Ignore backup directories
 ignore/
 ignore/**/*.tex_backups_/
+*.synctex
+*.dvi
+
+*.out
+
+document.synctex.gz.sum.synctex
