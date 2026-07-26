@@ -46,7 +46,7 @@ jobs:
 
       - name: Compile LaTeX (first pass)
         if: steps.skipcheck.outputs.skip_build == 'false'
-        uses: dante-ev/latex-action@2021-A
+        uses: dante-ev/latex-action  @latest
         with:
           root_file: document.tex
           compiler: pdflatex
@@ -54,7 +54,7 @@ jobs:
 
       - name: Run Biber for bibliography
         if: steps.skipcheck.outputs.skip_build == 'false'
-        uses: dante-ev/latex-action@2021-A
+        uses: dante-ev/latex-action  @latest
         with:
           root_file: document.tex
           compiler: biber
@@ -62,7 +62,7 @@ jobs:
       
       - name: Compile LaTeX (second pass for bibliography)
         if: steps.skipcheck.outputs.skip_build == 'false'
-        uses: dante-ev/latex-action@2021-A
+        uses: dante-ev/latex-action  @latest
         with:
           root_file: document.tex
           compiler: pdflatex
@@ -70,7 +70,7 @@ jobs:
 
       - name: Compile LaTeX (final pass for references)
         if: steps.skipcheck.outputs.skip_build == 'false'
-        uses: dante-ev/latex-action@2021-A
+        uses: dante-ev/latex-action  @latest
         with:
           root_file: document.tex
           compiler: pdflatex
