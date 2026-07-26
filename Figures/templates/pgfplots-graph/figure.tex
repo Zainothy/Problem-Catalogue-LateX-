@@ -1,0 +1,20 @@
+\documentclass[tikz,border=3pt]{standalone}
+\input{../../common/fde.sty}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+    fdePlot,
+    xmin=-3.2, xmax=3.2,
+    ymin=-0.4, ymax=1.2,
+    xlabel={$t$},
+    ylabel={$f(t)$},
+    legend style={draw=none, fill=none, font=\scriptsize, at={(0.03,0.97)}, anchor=north west}
+  ]
+    \addplot[fdeBlue, thick, samples=160, domain=-3:3] {exp(-x^2)};
+    \addlegendentry{$e^{-t^2}$}
+    \addplot[fdeRed, thick, samples=160, domain=-3:3] {0.5*cos(deg(2*x))};
+    \addlegendentry{$\frac12\cos(2t)$}
+  \end{axis}
+\end{tikzpicture}
+\end{document}

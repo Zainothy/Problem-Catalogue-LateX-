@@ -1,0 +1,83 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Figure: Build PDF+SVG for current figure",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/Figures/common/build-figure.ps1",
+        "-FigureDir",
+        "${fileDirname}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$latex"
+    },
+    {
+      "label": "Figure: Clean current figure",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/Figures/common/build-figure.ps1",
+        "-FigureDir",
+        "${fileDirname}",
+        "-Clean"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Figure: Open SVG/PDF preview",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/Figures/common/preview-figure.ps1",
+        "-FigureDir",
+        "${fileDirname}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Figure: New from template",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/Figures/common/new-figure.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "GeoGebra: Copy latest exported SVG here",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/Figures/common/copy-geogebra-export.ps1",
+        "-FigureDir",
+        "${fileDirname}"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

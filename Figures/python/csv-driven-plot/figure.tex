@@ -1,0 +1,20 @@
+\documentclass[tikz,border=3pt]{standalone}
+\input{../../common/fde.sty}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+    fdePlot,
+    xmin=-3.2, xmax=3.2,
+    ymin=-1.2, ymax=1.2,
+    xlabel={$x$},
+    ylabel={},
+    legend style={draw=none, fill=none, font=\scriptsize, at={(0.03,0.97)}, anchor=north west}
+  ]
+    \addplot[fdeBlue, thick] table[x=x, y=sinx, col sep=comma] {data.csv};
+    \addlegendentry{$\sin x$}
+    \addplot[fdeRed, thick] table[x=x, y=cosx, col sep=comma] {data.csv};
+    \addlegendentry{$\cos x$}
+  \end{axis}
+\end{tikzpicture}
+\end{document}

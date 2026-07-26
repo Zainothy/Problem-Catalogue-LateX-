@@ -1,0 +1,16 @@
+\documentclass[tikz,border=3pt]{standalone}
+\input{../../common/fde.sty}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.05]
+  \node[fdeNode] (A) at (90:1.35) {$1$};
+  \node[fdeNode] (B) at (18:1.35) {$2$};
+  \node[fdeNode] (C) at (-54:1.35) {$3$};
+  \node[fdeNode] (D) at (-126:1.35) {$4$};
+  \node[fdeNode] (E) at (162:1.35) {$5$};
+
+  \draw[fdeLine] (A) -- (B) -- (C) -- (D) -- (E) -- (A);
+  \draw[fdeLine, draw=fdeBlue] (A) -- (C) -- (E) -- (B) -- (D) -- (A);
+  \node[fdeLabel] at (0,-2.0) {$K_5$ drawn with highlighted Hamiltonian cycle};
+\end{tikzpicture}
+\end{document}

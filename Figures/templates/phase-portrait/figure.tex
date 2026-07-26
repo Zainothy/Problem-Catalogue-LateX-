@@ -1,0 +1,25 @@
+\documentclass[tikz,border=3pt]{standalone}
+\input{../../common/fde.sty}
+
+\begin{document}
+\begin{tikzpicture}[scale=0.9]
+  \draw[fdeGuide] (-3,-3) grid (3,3);
+  \draw[fdeAxis] (-3.25,0) -- (3.35,0) node[right] {$x$};
+  \draw[fdeAxis] (0,-3.25) -- (0,3.35) node[above] {$y$};
+
+  \foreach \x in {-2,-1,0,1,2} {
+    \foreach \y in {-2,-1,0,1,2} {
+      \pgfmathsetmacro{\u}{-\y}
+      \pgfmathsetmacro{\v}{\x}
+      \pgfmathsetmacro{\len}{sqrt(\u*\u+\v*\v)}
+      \ifthenelse{\lengthtest{\len pt > 0.1pt}}{
+        \draw[fdeVector, draw=fdeMuted] (\x,\y) -- ++({0.28*\u/\len},{0.28*\v/\len});
+      }{}
+    }
+  }
+
+  \draw[fdeLine, draw=fdeBlue, domain=0:360, samples=160]
+    plot ({1.8*cos(\x)}, {1.8*sin(\x)});
+  \node[fdeLabel] at (2.25,2.55) {$\dot x=-y,\ \dot y=x$};
+\end{tikzpicture}
+\end{document}

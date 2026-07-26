@@ -1,0 +1,24 @@
+[
+  {
+    "key": "ctrl+alt+b",
+    "command": "latex-workshop.build"
+  },
+  {
+    "key": "ctrl+alt+f",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Figure: Build PDF+SVG for current figure"
+  },
+  {
+    "key": "ctrl+alt+c",
+    "command": "latex-workshop.clean"
+  },
+  {
+    "key": "ctrl+alt+v",
+    "command": "latex-workshop.view"
+  },
+  {
+    "key": "ctrl+alt+shift+v",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Figure: Open SVG/PDF preview"
+  }
+]

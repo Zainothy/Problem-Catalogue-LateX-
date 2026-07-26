@@ -22,3 +22,12 @@ ignore/**/*.tex_backups_/
 *.out
 
 document.synctex.gz.sum.synctex
+
+# Figure Development Environment build caches
+Figures/**/build/
+Figures/**/*.synctex.gz
+Figures/**/*.fls
+Figures/**/*.fdb_latexmk
+Figures/**/*.aux
+Figures/**/*.log
+Figures/**/*.out

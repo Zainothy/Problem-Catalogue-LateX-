@@ -1,0 +1,15 @@
+\documentclass[tikz,border=3pt]{standalone}
+\input{../../common/fde.sty}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.1]
+  \draw[fdeGuide] (-0.4,-0.4) grid (3.5,2.4);
+  \draw[fdeAxis] (-0.5,0) -- (3.7,0) node[right] {$x$};
+  \draw[fdeAxis] (0,-0.5) -- (0,2.6) node[above] {$y$};
+
+  \draw[fdeVector] (0,0) -- (2.6,1.5) node[midway, above] {$\vec v$};
+  \draw[fdeVector, draw=fdeGreen] (0,0) -- (2.6,0) node[midway, below] {$v_x$};
+  \draw[fdeVector, draw=fdeGold] (2.6,0) -- (2.6,1.5) node[midway, right] {$v_y$};
+  \draw[fdeThin, dashed] (2.6,1.5) -- (2.6,0);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,16 @@
+\documentclass[tikz,border=3pt]{standalone}
+\input{../../common/fde.sty}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.05]
+  \draw[fdeLine, fill=fdeBlue!7] (0,0) ellipse (2.0 and 1.25);
+  \draw[fdeLine, fill=white] (-0.45,0.05) circle (0.42);
+  \draw[fdeLine] plot[smooth cycle, tension=0.8]
+    coordinates {(0.45,0.15) (0.95,0.55) (1.35,0.05) (0.95,-0.42)};
+
+  \node[fdeLabel] at (-1.35,0.8) {$X$};
+  \node[fdeLabel] at (1.0,0.02) {$U$};
+  \node[fdeSmallLabel] at (-0.45,0.05) {hole};
+  \draw[fdeVector] (-1.1,-0.65) .. controls (-0.1,-1.15) and (1.0,-0.85) .. (1.45,-0.25);
+\end{tikzpicture}
+\end{document}

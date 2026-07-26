@@ -80,6 +80,7 @@
     </requires>
     <requires type="editable">
       <file>references.bib</file>
+      <file>references_zotero.bib</file>
     </requires>
   </external>
 </requests>

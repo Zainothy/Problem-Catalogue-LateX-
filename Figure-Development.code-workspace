@@ -1,0 +1,32 @@
+{
+  "folders": [
+    {
+      "name": "LaTeX Hub",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/build": true
+    },
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.view.pdf.viewer": "tab"
+  },
+  "extensions": {
+    "recommendations": [
+      "James-Yu.latex-workshop",
+      "mathematic.vscode-latex",
+      "draivin.hsnips",
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "ms-python.debugpy",
+      "rickaym.manim-sideview",
+      "github.vscode-github-actions",
+      "streetsidesoftware.code-spell-checker",
+      "valentjn.vscode-ltex",
+      "mechatroner.rainbow-csv"
+    ]
+  }
+}

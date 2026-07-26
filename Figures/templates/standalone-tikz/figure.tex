@@ -1,0 +1,15 @@
+\documentclass[tikz,border=3pt]{standalone}
+\input{../../common/fde.sty}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.1]
+  \draw[fdeGuide] (-0.5,-0.5) grid (3.5,2.5);
+  \draw[fdeAxis] (-0.7,0) -- (3.7,0) node[right] {$x$};
+  \draw[fdeAxis] (0,-0.7) -- (0,2.7) node[above] {$y$};
+
+  \draw[fdeLine] (0.4,0.4) .. controls (1.2,2.1) and (2.3,2.1) .. (3.1,0.5);
+  \node[fdePoint, label=below:{$A$}] at (0.4,0.4) {};
+  \node[fdePoint, label=below:{$B$}] at (3.1,0.5) {};
+  \node[fdeLabel, above] at (1.8,1.85) {template curve};
+\end{tikzpicture}
+\end{document}

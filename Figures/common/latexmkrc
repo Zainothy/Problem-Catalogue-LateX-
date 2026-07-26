@@ -1,0 +1,8 @@
+$pdf_mode = 1;
+$synctex = 1;
+$interaction = 'nonstopmode';
+$file_line_error = 1;
+$halt_on_error = 1;
+$out_dir = 'build';
+$aux_dir = 'build';
+$clean_ext .= ' synctex.gz run.xml';

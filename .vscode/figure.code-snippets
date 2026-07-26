@@ -1,0 +1,62 @@
+{
+  "TikZ axes": {
+    "scope": "latex",
+    "prefix": "tikz-axes",
+    "body": [
+      "\\draw[fdeAxis] (${1:-3},0) -- (${2:3},0) node[right] {$x$};",
+      "\\draw[fdeAxis] (0,${3:-2}) -- (0,${4:2}) node[above] {$y$};"
+    ],
+    "description": "Coordinate axes with FDE styling"
+  },
+  "TikZ force arrow": {
+    "scope": "latex",
+    "prefix": "tikz-force",
+    "body": [
+      "\\draw[fdeForce] (${1:0,0}) -- ++(${2:0,-1.4}) node[${3:below}] {$${4:mg}$};"
+    ],
+    "description": "Force arrow with label"
+  },
+  "TikZ vector": {
+    "scope": "latex",
+    "prefix": "tikz-vector",
+    "body": [
+      "\\draw[fdeVector] (${1:0,0}) -- (${2:2,1}) node[midway, ${3:above}] {$${4:\\vec v}$};"
+    ],
+    "description": "Vector arrow with midpoint label"
+  },
+  "TikZ node": {
+    "scope": "latex",
+    "prefix": "tikz-node",
+    "body": [
+      "\\node[fdeNode] (${1:A}) at (${2:0,0}) {$${3:A}$};"
+    ],
+    "description": "Styled labelled node"
+  },
+  "TikZ brace": {
+    "scope": "latex",
+    "prefix": "tikz-brace",
+    "body": [
+      "\\draw[fdeBrace] (${1:0,0}) -- (${2:2,0}) node[midway, ${3:below}=4pt] {$${4:L}$};"
+    ],
+    "description": "Decorative measurement brace"
+  },
+  "TikZ labelled angle": {
+    "scope": "latex",
+    "prefix": "tikz-angle",
+    "body": [
+      "\\pic[draw=fdeBlue, \"$${1:\\theta}$\", angle eccentricity=1.35, angle radius=${2:0.55cm}] {angle=${3:B}--${4:A}--${5:C}};"
+    ],
+    "description": "Labelled Euclidean angle"
+  },
+  "TikZ commutative square": {
+    "scope": "latex",
+    "prefix": "tikz-cd-square",
+    "body": [
+      "\\begin{tikzcd}",
+      "  ${1:A} \\arrow[r, \"${2:f}\"] \\arrow[d, \"${3:g}\"'] & ${4:B} \\arrow[d, \"${5:h}\"] \\\\",
+      "  ${6:C} \\arrow[r, \"${7:k}\"'] & ${8:D}",
+      "\\end{tikzcd}"
+    ],
+    "description": "Commutative square"
+  }
+}

@@ -1,0 +1,17 @@
+\documentclass[tikz,border=3pt]{standalone}
+\input{../../common/fde.sty}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.05]
+  \coordinate (M) at (0,0);
+  \draw[fdeLine, fill=white] (-0.7,-0.45) rectangle (0.7,0.45);
+  \node[fdeLabel] at (M) {$m$};
+
+  \draw[fdeForce] (M) -- ++(0,-1.5) node[below] {$mg$};
+  \draw[fdeForce] (M) -- ++(0,1.45) node[above] {$N$};
+  \draw[fdeForce] (M) -- ++(1.55,0) node[right] {$F$};
+  \draw[fdeForce] (M) -- ++(-1.2,0) node[left] {$f$};
+
+  \draw[fdeGuide] (-1.4,-0.48) -- (1.4,-0.48);
+\end{tikzpicture}
+\end{document}

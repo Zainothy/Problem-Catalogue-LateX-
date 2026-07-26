@@ -1,0 +1,49 @@
+{
+  "files.associations": {
+    "*.tikz": "latex",
+    "*.tex": "latex"
+  },
+  "files.exclude": {
+    "**/build": true,
+    "**/*.aux": true,
+    "**/*.fls": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.log": true,
+    "**/*.synctex.gz": true
+  },
+  "files.watcherExclude": {
+    "**/build/**": true
+  },
+  "editor.rulers": [88],
+  "editor.wordWrap": "on",
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
+    "editor.quickSuggestions": {
+      "comments": false,
+      "strings": false,
+      "other": true
+    }
+  },
+  "[bibtex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "[python]": {
+    "editor.formatOnSave": true
+  },
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  "latex-workshop.intellisense.package.enabled": true,
+  "latex-workshop.hover.preview.enabled": true,
+  "cSpell.language": "en,en-GB",
+  "cSpell.words": [
+    "GeoGebra",
+    "latexmk",
+    "MiKTeX",
+    "Obsidian",
+    "PGFPlots",
+    "SyncTeX",
+    "TikZ",
+    "topological"
+  ]
+}

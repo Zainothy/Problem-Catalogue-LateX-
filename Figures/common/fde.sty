@@ -1,0 +1,74 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{fde.sty}[2026/07/24 Shared Figure Development Environment styles]
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{mathtools}
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\RequirePackage{tikz-cd}
+\RequirePackage{pgfplots}
+\RequirePackage{ifthen}
+
+\pgfplotsset{compat=1.18}
+
+\usetikzlibrary{
+  arrows.meta,
+  angles,
+  calc,
+  decorations.markings,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  graphs,
+  intersections,
+  positioning,
+  quotes,
+  shapes.geometric
+}
+
+\definecolor{fdeInk}{HTML}{111827}
+\definecolor{fdeMuted}{HTML}{6B7280}
+\definecolor{fdeGrid}{HTML}{D1D5DB}
+\definecolor{fdeBlue}{HTML}{2563EB}
+\definecolor{fdeRed}{HTML}{DC2626}
+\definecolor{fdeGreen}{HTML}{059669}
+\definecolor{fdeGold}{HTML}{B45309}
+\definecolor{fdePurple}{HTML}{7C3AED}
+
+\tikzset{
+  fdeLine/.style={draw=fdeInk, line width=0.8pt, line cap=round, line join=round},
+  fdeThin/.style={draw=fdeInk, line width=0.55pt, line cap=round, line join=round},
+  fdeGuide/.style={draw=fdeGrid, line width=0.35pt},
+  fdeAxis/.style={fdeLine, -{Latex[length=2.2mm]}},
+  fdeVector/.style={draw=fdeBlue, line width=1pt, -{Latex[length=2.4mm]}},
+  fdeForce/.style={draw=fdeRed, line width=1pt, -{Latex[length=2.4mm]}},
+  fdeBrace/.style={decorate, decoration={brace, amplitude=5pt}, draw=fdeMuted},
+  fdeNode/.style={circle, draw=fdeInk, fill=white, inner sep=1.4pt, minimum size=5.5mm},
+  fdePoint/.style={circle, fill=fdeInk, inner sep=1.4pt},
+  fdeLabel/.style={font=\small, text=fdeInk},
+  fdeSmallLabel/.style={font=\scriptsize, text=fdeMuted}
+}
+
+\pgfplotsset{
+  fdePlot/.style={
+    axis lines=middle,
+    axis line style={fdeAxis},
+    tick style={draw=fdeMuted},
+    grid=both,
+    grid style={fdeGuide},
+    major grid style={fdeGuide},
+    minor tick num=1,
+    xlabel={$x$},
+    ylabel={$y$},
+    label style={font=\small, text=fdeInk},
+    tick label style={font=\scriptsize, text=fdeMuted},
+    width=8cm,
+    height=5.2cm
+  }
+}
+
+\newcommand{\fdeOrigin}{\coordinate (O) at (0,0);}
+\newcommand{\fdePoint}[3]{\node[fdePoint, label={#3:{$#1$}}] (#1) at #2 {};}
+\newcommand{\fdeMass}[2]{\draw[fdeLine, fill=white] (#1) circle (#2);}

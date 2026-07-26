@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "James-Yu.latex-workshop",
+    "mathematic.vscode-latex",
+    "draivin.hsnips",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.debugpy",
+    "rickaym.manim-sideview",
+    "github.vscode-github-actions",
+    "streetsidesoftware.code-spell-checker",
+    "valentjn.vscode-ltex",
+    "mechatroner.rainbow-csv"
+  ]
+}
